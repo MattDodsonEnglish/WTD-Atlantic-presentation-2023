@@ -1,40 +1,849 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
 
-		<title>reveal.js</title>
+    <title>Not trees, but graphs</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <meta
+      name="description"
+      content="A bottom-up approach to fixing a docs site."
+    />
+    <meta name="author" content="Matt Dodson" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Mandatory Intro</h1>
+          <p>Matt Dodson. Technical writing and miscellany.</p>
+          <p>
+            Work with me @
+            <a href="https://wellshapedwords.com">wellshapedwords.com</a>
+          </p>
+        </section>
+        <section>
+          <img
+            src="static/intro-compare.svg"
+            style="
+              width: 700px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+            class="demo-logo"
+          />
+
+          <h2>Not trees, but graphs</h2>
+          <p>
+            <small>A ground-up approach to fixing a docs site.</small>
+          </p>
+        </section>
+
+        <section>
+          <img src="static/plan.png" width="400" />
+        </section>
+
+        <section id="intro">
+          <section>
+            <h2>Behold the radient city!</h2>
+
+            <img
+              src="http://4.bp.blogspot.com/_Mjune_KWGXA/TVF_JfUTBcI/AAAAAAAAGEM/6PcC8O6HshY/s1600/ville_radieuse.jpg"
+              alt="ville radieus"
+            />
+          </section>
+          <section data-auto-animate>
+            <h3>The bird's eye view</h3>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Plan_Voisin_model.jpg"
+              width="500"
+              alt=""
+            />
+          </section>
+          <section data-auto-animate>
+            <h3>The bird's eye view</h3>
+            <div class="r-stack" style="float: left">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Zuidoostelijke_stadsuitbreiding_van_Amsterdam%2C_maquette_zuidoostelijk_stadsdeel%2C_Bestanddeelnr_917-8365.jpg/1198px-Zuidoostelijke_stadsuitbreiding_van_Amsterdam%2C_maquette_zuidoostelijk_stadsdeel%2C_Bestanddeelnr_917-8365.jpg?20180130162336"
+                alt=""
+                class="fragment fade-out"
+                width="500"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Cabrini-Green_neighborhood_in_Chicago.jpg/640px-Cabrini-Green_neighborhood_in_Chicago.jpg"
+                alt="cabrini from afar"
+                class="fragment current-visible"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Pruitt-igoeUSGS02.jpg"
+                alt=""
+                class="fragment current-visible"
+              />
+            </div>
+          </section>
+          <section data-auto-animate>
+            <h3>Problem: people are not birds</h3>
+            <img
+              src="static/people-are-birds.svg"
+              alt=""
+              width="600"
+              data-id="bird"
+            />
+          </section>
+
+          <section data-auto-animate>
+            <h3>People are not birds</h3>
+            <img
+              src="static/people-are-birds-false.svg"
+              alt=""
+              width="600"
+              data-id="bird"
+            />
+          </section>
+
+          <section>
+            <div class="r-stack" style="float: left">
+              <img
+                src="https://images.adsttc.com/media/images/613a/1030/f91c/8113/6e00/0040/slideshow/cabrini_mini.jpg?1631195161"
+                alt="cabrini from afar"
+                width="500"
+                class="fragment current-visible"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Pruitt-Igoe-vandalized-windows.jpg/640px-Pruitt-Igoe-vandalized-windows.jpg"
+                alt="pruitt-igoe"
+                width="500"
+                class="fragment current-visible"
+              />
+              <img
+                src="https://www.publicdomainpictures.net/pictures/120000/velka/le-vele-di-scampia.jpg"
+                alt="vele di scampia"
+                width="500"
+                class="fragment current-visible"
+              />
+            </div>
+          </section>
+          <section>
+            <p>The alternative: slow and organic growth</p>
+            <div class="r-stack" style="float: left">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1d/NYC_Manhattan_1938_Franz_Grasser.jpg"
+                alt="lower manhattan"
+                width="600"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/City_Gate%2C_Harar_Jugol_%2814464345823%29.jpg/640px-City_Gate%2C_Harar_Jugol_%2814464345823%29.jpg"
+                alt="harar jugol"
+                width="560"
+                class="fragment current visible"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Beijing_hutong_area_1.jpg"
+                alt="bejing hutong"
+                class="fragment current-visible"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/06/Gente_caminando_por_San_Telmo.JPG"
+                alt="san telmo, ba"
+                width="300"
+                class="fragment current-visible"
+              />
+            </div>
+          </section>
+        </section>
+
+        <!--- Who this is for --->
+        <section>
+          <section>
+            <h2>
+              This talk is about taking <br />
+              the view from the ground
+            </h2>
+          </section>
+          <section data-auto-animate>
+            <p data-id="text">
+              Instead of architecture <br />
+              from the view of the walker...
+            </p>
+            <img
+              class="r-stretch right"
+              src="static/milque-walk.png"
+              alt="milquetoast walking"
+              data-id="milquetoast"
+            />
+          </section>
+          <section data-auto-animate>
+            <p data-id="text">
+              <span style="color: red">information</span>
+              architecture <br />from the view of the
+              <span style="color: red">reader</span>.
+            </p>
+            <img
+              src="http://www.lileks.com/institute/comicsins/comics/milquetoast/caspar1.jpg"
+              alt="milquetoast walking and reading"
+              class="r-stretch"
+              data-id="milquetoast"
+            />
+          </section>
+        </section>
+
+        <!-- The draw of top-down --->
+        <section>
+          <section>
+            <h2>Trees vs. Graphs</h2>
+            <img src="static/intro-compare.svg" alt="" />
+            <small>(Pssst....a tree is a graph)</small>
+          </section>
+
+          <section>
+            <h3>A site is a tree (for writers)</h3>
+
+            <pre class="fragment fade-in"><code>$ tree docs/ </code></pre>
+            <pre class="fragment fade-in"><code>
+docs/
+├── colophon
+│   ├── bug-bounty.md
+│   ├── img
+│   │   └── table-overflow.png
+│   ├── _index.md
+│   └── problems.md
+├── essentials
+│   ├── _index.md
+│   ├── practices.md
+│   ├── principles.md
+│   └── reading-list.md
+├── _index.md
+├── posts
+│   ├── antipattern-allows-you-to.md
+│   ├── good-docs-aim-for-universal-design.md
+│   ├── hugo-abbreviation-shortcode.md
+│   ├── hugo-inline-shortcodes.md
+│   ├── _index.md
+│   ├── linkchecking
+│   │   ├── benchmarks.md
+│   │   ├── data
+│   │   │   ├── broken-link-checker.txt.gz
+│   │   │   ├── linkchecker.txt.gz
+│   │   │   ├── linkinator.txt.gz
+│   │   │   └── muffet.txt.gz
+│   │   ├── how-i-check-links.md
+│   │   ├── _index.md
+│   │   └── link-check-your-site.md
+│   ├── sentence-repair.md
+│   ├── seo-the-docs
+│   │   ├── index.md
+│   │   └── spam-scam-continuum.svg
+│   ├── shortcode-headings-in-toc.md
+│   └── split-files-to-save-time.md
+└── work
+    ├── _index.md
+    ├── portfolio.md
+    ├── services.md
+    └── testimonials.md
+            </code>
+            </pre>
+          </section>
+          <section>
+            <h3>A site is cyclical graph (for readers)</h3>
+            <img
+              src="static/maintenance-links.svg"
+              alt=""
+              width="500"
+              class="fragment"
+            />
+          </section>
+          <section data-auto-animate>
+            <h3>Google is not a tower</h3>
+            <img
+              src="static/google-is-a-tower.svg"
+              alt=""
+              width="600"
+              data-id="google"
+            />
+          </section>
+
+          <section data-auto-animate>
+            <h3>Google is not a tower</h3>
+            <img
+              src="static/google-is-a-tower-false.svg"
+              alt=""
+              width="600"
+              data-id="google"
+            />
+          </section>
+
+          <section>
+            <h3>It's a subway train</h3>
+            <img
+              width="500"
+              src="static/welcome-to-doctown.png"
+              alt="two
+            people emerging from a subway tunnel into a blankspace called
+            doctown"
+            />
+            <!----
+                https://commons.wikimedia.org/wiki/File:TTC_subway_stairs_to_Bloor_St_E_16073569974.jpg
+             --->
+          </section>
+        </section>
+
+        <!--- fools gold--->
+        <section>
+          <section>
+            <h2>
+              The false allure of the <br />
+              top-down approach
+            </h2>
+          </section>
+          <section>
+            <h2>Awkward:</h2>
+            <p>sometimes writers know less than readers</p>
+            <div class="r-stack">
+              <img
+                src="static/bubble-doc-side.png"
+                alt=""
+                width="700"
+                class="fragment current-visible"
+              />
+              <img
+                src="static/bubble-skill-side.png"
+                class="fragment current-visible"
+                alt=""
+                width="700"
+              />
+              <img
+                src="static/bubble-sides.png"
+                class="fragment current-visible"
+                alt=""
+                width="700"
+              />
+            </div>
+          </section>
+          <section data-auto-animate>
+            <p data-id="duality-dilemma">Documentarian's dilemma</p>
+            <div class="r-stack" style="float: left" data-id="donk-wizz">
+              <img
+                src="static/wizard-hat.svg"
+                alt=""
+                width="700"
+                class="fragment current-visible"
+              />
+              <img
+                src="static/wizard-hat-donkey.svg"
+                alt=""
+                width="700"
+                class="fragment current-visible"
+              />
+            </div>
+          </section>
+          <section data-auto-animate>
+            <p data-id="duality-dilemma">Documentarian's duality</p>
+            <img
+              src="static/wizard-hat-donkey-combined.svg"
+              alt=""
+              width="700"
+              class="fragment current-visible"
+              data-id="donk-wizz"
+            />
+          </section>
+          <section data-transition="convex">
+            <p>Don't be the intellectual ignoramus</p>
+            <img src="static/badinguet-allant.png" alt="" width="400" />
+          </section>
+          <section data-transition="concave">
+            <p>Become the ignorant sage</p>
+            <img src="static/badinguet-revenant.png" alt="" width="400" />
+          </section>
+        </section>
+
+        <section>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Badinguet_Allant_a_la_Guerre_-_Badinguet_Revenant_de_la_Guerre.jpg"
+            alt="why not both"
+            class="r-stretch"
+          />
+          <h3>They are the same image</h3>
+        </section>
+
+        <section>
+          <h2>Part 2. Strategies</h2>
+        </section>
+
+        <!-- non-boarding (Goes backwards) -->
+        <section data-transition="slide">
+          <div class="r-stack">
+            <h2 class="fragment fade-out">Onboarding?</h2>
+            <h2 class="fragment fade-in-then-out">No thanks!</h2>
+            <h2 class="fragment fade-in">Instead, how about...</h2>
+          </div>
+        </section>
+        <section>
+          <section>
+            <h2><span class="fragment highlight-red">Non</span>boarding</h2>
+            <p class="fragment fade-in">Read docs and test the application.</p>
+            <p class="fragment fade-in">View doctown from the reader's eyes.</p>
+          </section>
+          <section>
+            <p>Try things out</p>
+            <img
+              class="r-stretch"
+              src="static/loop.svg"
+              alt="A diagram of an infinite loop"
+            />
+            <p style="float: right" class="fragment">and find broken flows</p>
+          </section>
+          <section>
+            <h3>Then interview internal members</h3>
+          </section>
+
+          <section>
+            <h3>Where does traffic flow?</h3>
+            <figure>
+              <img
+                class=""
+                src=" https://upload.wikimedia.org/wikipedia/commons/5/5f/Scramble_from_above%2C_SHIBUYA_SKY_%2849367160502%29_%28cropped%29.jpg"
+                alt="Shibuya crossing, tokyo"
+                width="700"
+              />
+            </figure>
+            <p>You can look at logs, too.</p>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Map the most important areas</h3>
+            <img
+              class="r-stretch"
+              src="static/strolling-doctown.svg"
+              alt="A stroll down doctown"
+              data-id="doctown-map"
+              data-id="doctown-map"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h2>The work radiates outwards</h2>
+            <img
+              width="700"
+              src="static/doctown-radiation.svg"
+              alt="A stroll down doctown"
+              data-id="doctown-map"
+            />
+          </section>
+          <section>
+            <h3>Start with the easy stuff</h3>
+            <blockquote cite="https://www.youtube.com/watch?v=3LtQWxhqjqI">
+              Architecture: the stuff that's hard to change. —Dylan Beattie
+            </blockquote>
+          </section>
+          <!--- Shearing layers -->
+          <section id="shearing-layers">
+            <h3>Shearing layers</h3>
+            <img
+              src="https://www.researchgate.net/profile/Inas-Abdelsabour/publication/338831664/figure/fig1/AS:851607004651521@1580050340591/Building-layers-and-their-expected-lifetime-10.png"
+              alt="building shearing layers"
+            />
+          </section>
+          <section>
+            <h3>Documentation shearing layers</h3>
+            <img
+              class="r-stretch"
+              src="static/site-shearing-layers.png"
+              alt="site shearing layers"
+            />
+          </section>
+        </section>
+
+        <section
+          id="ground-floor"
+          data-background-image="static/background-groundfloor.svg"
+        >
+          <section>
+            <h2>Work on the ground</h2>
+            <img src="static/zig1f.png" class="fragment" width="800" />
+          </section>
+          <section data-auto-animate>
+            <h3>Bottom-up maintenance</h3>
+          </section>
+          <section data-auto-animate>
+            <h3>Bottom-up maintenance</h3>
+            <img
+              class="fragment current-visible"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A_Pothole_in_Broadmoor.jpg/640px-A_Pothole_in_Broadmoor.jpg"
+              alt="pothole, broadmore new-orleans"
+              width="500"
+            />
+          </section>
+          <section data-auto-animate>
+            <h3>Bottom-up maintenance</h3>
+            <p class="fragment">Fix broken links</p>
+            <div class="r-stack" style="float: left">
+              <img
+                src="static/broken-link.svg"
+                alt="a node isolated on 404 island"
+                width="500"
+                class="fragment current-visible"
+              />
+              <img
+                src="static/broken-link-fixed.svg"
+                alt="a node reunited with friends"
+                width="500"
+                class="fragment current-visible"
+              />
+            </div>
+          </section>
+          <section data-auto-animate>
+            <p class="fragment">Make obvious edits and trims</p>
+          </section>
+          <section data-auto-animate>
+            <p>Make obvious edits and trims</p>
+            <div class="r-stack" style="float: left">
+              <img
+                src="static/reduce-noise-boost-signal-wellshapedwords.svg"
+                width="700"
+                class="fragment current-visible"
+              />
+            </div>
+          </section>
+          <section data-auto-animate>
+            <p>Write better intros</p>
+            <img
+              src="static/tldr.svg"
+              alt=""
+              width="250"
+              class="fragment current-visible"
+            />
+          </section>
+
+          <section>
+            <h3>Early field research</h3>
+          </section>
+          <section>
+            <p>Read the first chapter of a book on your subject</p>
+          </section>
+          <section>
+            <p>Talk to people who talk to users</p>
+          </section>
+          <section>
+            <p>Observe them!</p>
+          </section>
+          <section>
+            <h3>First practice</h3>
+          </section>
+          <section></section>
+          <section data-auto-animate>
+            <p>Ask questions</p>
+          </section>
+          <section data-auto-animate>
+            <p>Ask questions</p>
+            <small>(preferably in writing)</small>
+          </section>
+        </section>
+
+        <section data-background-image="static/background-midlevel.svg">
+          <section>
+            <h2>Midlevel</h2>
+            <img src="static/zig2d.png" width="800" />
+          </section>
+          <section data-auto-animate>
+            <h3>Inter-page maintenance</h3>
+          </section>
+          <section data-auto-animate>
+            <h3>Inter-page maintenance</h3>
+            <p class="fragment">How do the pages speak to themselves?</p>
+            <img
+              class="fragment"
+              src="static/doc-talk.svg"
+              alt="docs talking"
+              width="500"
+            />
+          </section>
+          <section data-auto-animate>
+            <p>Isolate content into types</p>
+            <img
+              data-id="maintenance-sequence"
+              src="static/maintenance-topics.svg"
+              alt=""
+              width="600"
+            />
+          </section>
+          <section data-auto-animate>
+            <p>Make templates</p>
+            <img
+              src="static/maintenance-templates.svg.svg"
+              alt=""
+              width="600"
+              data-id="maintenance-sequence"
+            />
+          </section>
+          <section data-auto-animate>
+            <p>Improve flow through links</p>
+            <img
+              src="static/maintenance-links.svg"
+              alt=""
+              width="600"
+              data-id="maintenance-sequence"
+            />
+          </section>
+          <section>
+            <p class="fragment fade-out">Standardize lexis</p>
+            <div class="r-stack" style="float: left">
+              <p class="fragment fade-in">
+                Standardize <s class="fragment highlight-red">lexis</s>
+                <span class="fragment fade in">terminology</span>
+              </p>
+            </div>
+          </section>
+          <section>
+            <h3>Better content</h3>
+          </section>
+          <section data-auto-animate>
+            <p>Write tutorials for your past self</p>
+          </section>
+          <section data-auto-animate>
+            <p>Write tutorials for your past self</p>
+            <img
+              class="fragment"
+              src="static/future-calls-past.svg"
+              alt="future self calls past self"
+              width="500"
+            />
+          </section>
+          <section>
+            <p>Add diagrams and supportive content</p>
+          </section>
+          <section>
+            <h3>Getting to know your readers</h3>
+            <p class="fragment current-visible">Reading industry articles</p>
+            <p class="fragment current-visible">
+              Read issues&mdash;especially issues about main topics
+            </p>
+          </section>
+          <section>
+            <h3>Beyond beginner skill</h3>
+            <p class="fragment current-visible">
+              Test examples, try to reproduce issues
+            </p>
+            <p class="fragment current-visible">Make a plausible task</p>
+            <p class="fragment current-visible">
+              Develop skills that support your tool.
+            </p>
+          </section>
+        </section>
+
+        <section><h2>Don't forget to test your docs</h2></section>
+
+        <section
+          id="high-level"
+          data-background-image="static/background-toplevel.svg"
+        >
+          <section>
+            <h2>Moving on up</h2>
+            <img src="static/zig3d.png" width="800" />
+          </section>
+          <section data-auto-animate>
+            <p data-id="beyonde-use">Beyond useful</p>
+          </section>
+          <section data-auto-animate>
+            <p data-id="beyonde-use">
+              Beyond useful: <span style="color: teal">beautiful</span>
+            </p>
+            <div class="r-stack">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Grand_Central_Terminal_Main_Concourse_May_2014.jpg/640px-Grand_Central_Terminal_Main_Concourse_May_2014.jpg"
+                alt="Grand central, christmas"
+                class="fragment"
+                width="400"
+              />
+            </div>
+          </section>
+          <section>
+            <h3>Deep writing</h3>
+            <p class="fragment current-visible">Multi-part tutorials</p>
+            <p class="fragment current-visible">
+              Topics on how to use the app in context
+            </p>
+            <p class="fragment current-visible">How it works under the hood.</p>
+          </section>
+          <section>
+            <h3>At last, perfect docs</h3>
+            <p class="fragment current-visible">But enhancement never ends</p>
+          </section>
+          <section>
+            <p class="fragment current-visible">Enhance presentation</p>
+            <p class="fragment current-visible">Write meta-documentation</p>
+          </section>
+          <section>
+            <h3>Deep knowledge</h3>
+            <p class="fragment current-visible">
+              Understand the tool's limitations
+            </p>
+            <p class="fragment current-visible">
+              Explore real-world implementations
+            </p>
+            <p class="fragment current-visible">Finish the book?</p>
+          </section>
+          <section>
+            <h3>Expertise</h3>
+            <p class="fragment current-visible">
+              Participating in design discussions
+            </p>
+            <p class="fragment current-visible">
+              Could you stand-in for a solutions person?
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h3>Circulation</h3>
+            <img
+              data-id="circulate"
+              src="static/bubble-sides.png"
+              alt=""
+              width="700"
+            />
+          </section>
+          <section data-auto-animate>
+            <img
+              data-id="circulate"
+              src="static/bubble-doc-to-reader.png"
+              alt=""
+              width="705"
+            />
+          </section>
+          <section data-auto-animate>
+            <img
+              data-id="circulate"
+              src="static/bubble-reader-to-reader.png"
+              alt=""
+              width="705"
+            />
+          </section>
+          <section data-auto-animate>
+            <img
+              data-id="circulate"
+              src="static/bubble-reader-to-doc.png"
+              alt=""
+              width="705"
+            />
+          </section>
+          <section data-auto-animate>
+            <img
+              data-id="circulate"
+              src="static/bubble-signal-boost.png"
+              alt=""
+              width="705"
+            />
+          </section>
+          <section data-auto-animate>
+            <img
+              data-id="circulate"
+              src="static/bubble-double.png"
+              alt=""
+              width="705"
+            />
+          </section>
+          <section data-auto-animate>
+            <img
+              data-id="circulate"
+              src="static/bubble-triple.png"
+              alt=""
+              width="705"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h3>The view from up top</h3>
+          </section>
+          <section data-auto-animate>
+            <h3>The view from up top</h3>
+            <div class="r-stack" style="">
+              <img src="static/zig1a.png" class="fragment" width="800" />
+              <img src="static/zig1b.png" class="fragment" width="800" />
+              <img src="static/zig1c.png" class="fragment" width="800" />
+              <img src="static/zig1d.png" class="fragment" width="800" />
+              <img src="static/zig1e.png" class="fragment" width="800" />
+              <img src="static/zig1f.png" class="fragment" width="800" />
+              <img src="static/zig2a.png" class="fragment" width="800" />
+              <img src="static/zig2b.png" class="fragment" width="800" />
+              <img src="static/zig2c.png" class="fragment" width="800" />
+              <img src="static/zig2d.png" class="fragment" width="800" />
+              <img src="static/zig3a.png" class="fragment" width="800" />
+              <img src="static/zig3b.png" class="fragment" width="800" />
+              <img src="static/zig3c.png" class="fragment" width="800" />
+              <img
+                src="static/zig3d.png"
+                class="fragment"
+                width="800"
+                data-id="pyramid"
+              />
+            </div>
+          </section>
+          <section data-auto-animate>
+            <img src="static/zig-arrows.png" width="800" data-id="pyramid" />
+          </section>
+          <section data-transition="zoom">
+            <img src="static/zig-zoom1.png" width="800" />
+          </section>
+          <section data-transition="zoom">
+            <img src="static/zig-zoom2.png" width="800" />
+          </section>
+          <section data-transition="zoom">
+            <img src="static/zig-zoom3.png" width="800" />
+          </section>
+          <section data-transition="zoom">
+            <img src="static/party-donk.png" width="400" style="float: left" />
+            <img class="fragment fade-in" src="static/fin.svg" width="300" />
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+    </script>
+  </body>
 </html>

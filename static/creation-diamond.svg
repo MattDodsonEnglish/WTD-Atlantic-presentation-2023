@@ -1,0 +1,17 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235 247" width="470" height="494">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+    </style>
+    
+  </defs>
+  <rect x="0" y="0" width="235" height="247" fill="#ffffff"></rect><g stroke-opacity="0.8" fill-opacity="0.8" stroke-linecap="round" transform="translate(10 10) rotate(0 107.5 113.5)"><path d="M135 28.5 M135 28.5 C151.22 45.94, 167.44 63.39, 188 85.5 M135 28.5 C155.49 50.54, 175.98 72.57, 188 85.5 M188 85.5 C215 114, 215 114, 188 142.5 M188 85.5 C215 114, 215 114, 188 142.5 M188 142.5 C172.87 158.49, 157.73 174.48, 135 198.5 M188 142.5 C175.3 155.92, 162.59 169.35, 135 198.5 M135 198.5 C108 227, 108 227, 81 198.5 M135 198.5 C108 227, 108 227, 81 198.5 M81 198.5 C61.04 177.8, 41.09 157.11, 27 142.5 M81 198.5 C62.52 179.34, 44.05 160.18, 27 142.5 M27 142.5 C0 114, 0 114, 27 85.5 M27 142.5 C0 114, 0 114, 27 85.5 M27 85.5 C41.85 69.83, 56.69 54.16, 81 28.5 M27 85.5 C47.67 63.68, 68.35 41.85, 81 28.5 M81 28.5 C108 0, 108 0, 135 28.5 M81 28.5 C108 0, 108 0, 135 28.5" stroke="#1e1e1e" stroke-width="4" fill="none"></path></g><g stroke-opacity="0.8" fill-opacity="0.8" transform="translate(80.28333282470703 112.25) rotate(0 37.46666717529297 11.5)"><text x="37.46666717529297" y="0" font-family="Helvetica, Segoe UI Emoji" font-size="20px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Creation</text></g></svg>
