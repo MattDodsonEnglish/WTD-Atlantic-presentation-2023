@@ -1,9 +1,10 @@
-# My presentation for WTD Atlantic 2023
+# Source code for my presentation for WTD Atlantic 2023
 
 - [The video](https://www.youtube.com/watch?v=m5OxGst2sks)
 - [The slides](https://mattdodsonenglish.github.io/WTD-Atlantic-presentation-2023/)
+- [The writeup](https://wellshapedwords.com/posts/writeup-wtd-atlantic-2023/)
 
-This repo holds the [RevealJS](https://revealjs) source code for my presentation at [Write The Docs Atlantic](https://www.writethedocs.org/conf/atlantic/2023/).
+This repo holds the [RevealJS](https://revealjs.com) source code for my presentation at [Write The Docs Atlantic](https://www.writethedocs.org/conf/atlantic/2023/).
 
 ## License
 
