@@ -11,7 +11,7 @@ This repo holds the [RevealJS](https://revealjs.com) source code for my presenta
 All the code and CSS files are forked from RevealJS. They retain the RevealJS MIT license.
 
 The presentation itself, including the images, text, video, and audio, is licensed under a Creative Commons by 4.0.
-All media in the `static` dir is original&mdash;except the Milquetoast cartoon.
+All media in the `static` dir is original or public domain&mdash;except the Milquetoast cartoon and the wizard gif.
 
 I also used various images found on the WikiMedia commons. The vast majority, if not all, belong to the public domain. You can find these images in the source `index.html`.
 
